@@ -1,0 +1,23 @@
+<div class="container spacer">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Nouveau Projet
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label class="control-label">Intitule</label>
+        <input class="form-control "type="text" [(ngModel)]="projet.intitule">
+      </div>
+      <div class="form-group">
+          <label class="control-label">Description</label>
+          <input class="form-control "type="text" [(ngModel)]="projet.description">
+      </div>
+        <div class="form-group">
+            <label class="control-label">Date Debut</label>
+            <input class="form-control "type="date" [(ngModel)]="projet.dateDebut">
+        </div>
+
+        <button class="btn btn-primary" (click)="saveProjet()">Enregistrer</button>
+    </div>
+  </div>
+</div>

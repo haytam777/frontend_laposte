@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div id="wrapper">
+
+        <app-projet-sidebar [idProjet]="idProjet"></app-projet-sidebar> 
+        <div *ngIf="action == null; else castestadd">
+                <div *ngIf="idExigence > 0; else content">
+                        <app-exigence></app-exigence>
+                    </div>
+                    <ng-template #content>
+                        <app-projet-content></app-projet-content>
+                    </ng-template>
+        </div>
+        <ng-template #castestadd>
+            <app-castest-add></app-castest-add>
+        </ng-template>
+        
+        <!--<app-projet-sidebar [idProjet]="idProjet"></app-projet-sidebar>
+        <div *ngIf="idExigence > 0; else content">
+                <app-exigence></app-exigence>
+            </div>
+            <ng-template #content>
+                <app-projet-content></app-projet-content>
+            </ng-template>-->
+        
+        
+    </div>
+</div>

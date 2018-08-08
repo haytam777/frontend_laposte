@@ -1,0 +1,119 @@
+<div id="page-content-wrapper">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-12">
+              <h1>Exigence :</h1><br/>
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4> > Informations Générales</h4>
+                      </div>
+                      <div class="panel-body">
+
+                      </div>
+                  </div>
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          > Campagnes
+                          <div class="btn-group pull-right">
+                              <a href="#" class="btn btn-default btn-sm">Ajouter une pièce jointe</a>
+                          </div>
+                      </div>
+                      <div class="panel-body">
+                          <table class="table table-striped">
+                              <tr>
+                                <th>CAMPAGNE</th>
+                                <th>DESCRIPTION</th>
+                                <th>TAUX DE COUVERTURE</th>
+                                <th>TAUX DE VALIDATION</th>
+                                <th>DATE DEBUT</th>
+                                <th>DATE FIN</th>
+                                <th>ACTION</th>
+                              </tr>
+                              <tr *ngFor="let c of campagnes?.content">
+                                <td>{{c.nom}}</td>
+                                <td>{{c.description}}</td>
+                                <td>100%</td>
+                                <td>50%</td>
+                                <td>{{c.dateDebut}}</td>
+                                <td>{{c.dateFin}}</td>
+                                <td>
+                                  <p>
+                                    <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
+                                      <span class="glyphicon glyphicon-pencil"></span>
+                                    </button>
+                                    &nbsp;&nbsp;
+                                    <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
+                                      <span class="glyphicon glyphicon-trash"></span>
+                                    </button>
+                                  </p>
+                                </td>
+                              </tr>
+                              <!--<tr *ngFor="let p of projetsTab?.content">
+                                <td>{{ p.id }}</td>
+                                <td>{{ p.intitule }}</td>
+                                <td>{{ p.description }}</td>
+                                <td>{{ p.dateDebut }}</td>
+                                <td>
+                                  <a (click)="onGoToProjet(p.id)" clickable>
+                                    <i class="glyphicon glyphicon-folder-open"></i>
+                                  </a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <a (click)="onEditProjet(p.id)">Edit</a>
+                                </td>
+                              </tr>-->
+                            </table>
+                            <!--<div class="container">
+                              <ul class="nav nav-pills">
+                                <li [ngClass]="{ 'active' :i==currentPage}" *ngFor="let p of pages; let i=index">
+                                  <a (click)="goToPage(i)">{{ i }}</a>
+                                </li>
+                              </ul>
+                            </div>-->
+                      </div>
+                  </div>
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                        > Cas de test
+                        <div class="btn-group pull-right">
+                            <a (click)="onAddedCt()" class="btn btn-default btn-sm">Ajouter un cas de Test</a>
+                        </div>
+                      </div>
+                      <div class="panel-body">
+                          <table class="table table-striped">
+                              <tr>
+                                <th>CAS DE TEST</th>
+                                <th>DESCRIPTION</th>
+                                <th>ACTION</th>
+                              </tr>
+                              <tr *ngFor="let ct of casTests?.content">
+                                  <td>{{ct.nom}}</td>
+                                  <td>{{ct.description}}</td>
+                                  <td>
+                                    <p>
+                                      <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" >
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                      </button>
+                                      &nbsp;&nbsp;
+                                      <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" >
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                      </button>
+                                    </p>
+                                  </td>
+                                </tr>
+                            </table>
+                      </div>
+                  </div>
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          Pièces Jointes
+                          <div class="btn-group pull-right">
+                                  <a href="#" class="btn btn-default btn-sm">Ajouter une pièce jointe</a>
+                          </div>
+                      </div>
+                      <div class="panel-body">
+
+                      </div>
+                   </div>
+          </div>
+      </div>
+  </div>
+</div>

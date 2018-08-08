@@ -1,0 +1,43 @@
+
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+          <ul class="sidebar-nav">
+              <li class="sidebar-brand">
+                  <a href="#">
+                      Exigences
+                  </a>
+              </li>
+              <li>
+  
+                <div class="form-group has-feedback">
+                  <input type="text" class="form-control" placeholder="chercher">
+                  <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                </div>
+                
+              </li>
+              <li>
+                <button (click)="onAdd()" clickable class="glyphicon glyphicon-plus"></button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="glyphicon glyphicon-trash"></button>
+              </li>
+              <li>
+                <div class="input-group" [ngClass]="{'hidden':add==0}">
+                    <input type="text" [(ngModel)]="nExigence" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" (click)="added()" type="button">Ajouter</button>
+                    </span>
+                </div>
+              </li>
+              <li *ngFor="let e of exigences">
+                    <a (click)="goToExigence(idProjet,e.id)">{{e.nom}}</a>
+                    <!--<a (click)="goToEditExigence(e.id)"><i class="glyphicon glyphicon-pencil"></i></a> -->
+              </li>
+          </ul>
+      </div>
+      <!-- /#sidebar-wrapper -->
+    
+      
+    
+
+  
+  

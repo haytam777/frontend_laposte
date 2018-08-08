@@ -1,0 +1,39 @@
+<div class="container spacer">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Liste des projets</div>
+    <div class="panel-body">
+      <div class="form-group">
+        <input type="text" [(ngModel)]="motCle" placeholder="Mot clé"/>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-primary" (click)="chercher()">Chercher</button>
+      </div>
+      <table class="table table-striped">
+        <tr>
+          <th>ID</th>
+          <th>INTITULE</th>
+          <th>DESCRIPTION</th>
+          <th>DATE DEBUT</th>
+          <th>ACTION</th>
+        </tr>
+        <tr *ngFor="let p of projetsTab?.content">
+          <td>{{ p.id }}</td>
+          <td>{{ p.intitule }}</td>
+          <td>{{ p.description }}</td>
+          <td>{{ p.dateDebut }}</td>
+          <td>
+            <a (click)="onGoToProjet(p.id)" clickable>
+              <i class="glyphicon glyphicon-folder-open"></i>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a (click)="onEditProjet(p.id)">Edit</a>
+          </td>
+        </tr>
+      </table>
+      <div class="container">
+        <ul class="nav nav-pills">
+          <li [ngClass]="{ 'active' :i==currentPage}" *ngFor="let p of pages; let i=index">
+            <a (click)="goToPage(i)">{{ i }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
