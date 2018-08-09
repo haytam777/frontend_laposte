@@ -22,6 +22,8 @@ import { ExigencesService } from '../services/exigences.service';
 import { CampagnesService } from '../services/campagnes.service';
 import { CasTestService } from '../services/castest.service';
 import { CastestAddComponent } from './projet/exigence/castest-add/castest-add.component';
+import { PasDeTest } from '../models/model.pasdetest';
+import { PasTestService } from '../services/pastest.service';
 
 const appRoutes:Routes=[
   {path:'projets', component: ProjetsComponent},
@@ -56,7 +58,8 @@ const appRoutes:Routes=[
     HttpModule,
     FormsModule
   ],
-  providers: [ProjetsService,ExigencesService,CampagnesService,CasTestService],
+  providers: [ProjetsService,ExigencesService,CampagnesService,CasTestService,
+             PasTestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

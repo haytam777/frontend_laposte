@@ -8,7 +8,7 @@
                                   <form #f="ngForm" (ngSubmit)="onSaveCasTest(f.value)">
                                       <div class="form-group">
                                         <label class="control-label">Nom</label>
-                                        <input class="form-control "type="text" ngModel name="intitule" required>
+                                        <input class="form-control "type="text" ngModel name="nom" required>
                                       </div>
                                       <div class="form-group">
                                         <label class="control-label">Description</label>
@@ -30,10 +30,16 @@
                                                     &nbsp;&nbsp;
                                                     <a (click)="onMinEtapeTest(i)"><i class="glyphicon glyphicon-minus"></i></a>
                                                 </div>
-                                                
                                             </div>
                                             <div class="panel-body">
-                                              etape
+                                                <div class="form-group">
+                                                    <label class="control-label">Nom de l'étape</label>
+                                                    <input class="form-control "type="text" ngModel name="nomEtape{{i}}" required>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label class="control-label">Instructions</label>
+                                                    <textarea class="form-control "type="text" ngModel name="instructionEtape{{i}}" required></textarea>
+                                                  </div>
                                             </div>
                                           </div>
                                         </div>
